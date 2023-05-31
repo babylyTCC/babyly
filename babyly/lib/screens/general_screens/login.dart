@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:baby.ly/screens/base_screen.dart';
+import 'package:babyly/screens/client_screens/home_client.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'registration.dart';
 
@@ -216,7 +216,7 @@ class _LoginScreenState extends State<LoginScreen> {
             .then((uid) => {Fluttertoast.showToast(msg: "Login Bem Sucedido")});
 
         Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => BaseScreen()));
+            MaterialPageRoute(builder: (context) => HomeScreen()));
       } on FirebaseAuthException catch (error) {
         switch (error.code) {
           case 'auth/email-already-in-use':
