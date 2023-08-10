@@ -1,8 +1,8 @@
-import 'package:Pedagodino/screens/chat_screen.dart';
-import 'package:Pedagodino/screens/chat_selection.dart';
-import 'package:Pedagodino/screens/home_screen.dart';
-import 'package:Pedagodino/screens/person_screen.dart';
-import 'package:Pedagodino/screens/profile_screen.dart';
+import 'package:Pedagodino/screens/clientScreens/chat_screen.dart';
+import 'package:Pedagodino/screens/clientScreens/chat_selection.dart';
+import 'package:Pedagodino/screens/clientScreens/home_screen.dart';
+import 'package:Pedagodino/screens/clientScreens/person_screen.dart';
+import 'package:Pedagodino/screens/clientScreens/profile_screen.dart';
 import 'package:Pedagodino/screens/settings_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

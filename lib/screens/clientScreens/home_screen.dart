@@ -1,139 +1,7 @@
-// import 'dart:ui';
-
-// import 'package:Pedagodino/models/user_model.dart';
-// import 'package:Pedagodino/screens/numeros_screen.dart';
-// import 'package:Pedagodino/screens/letras_screen.dart';
-// import 'package:Pedagodino/screens/rimas_screen.dart';
-// import 'package:Pedagodino/screens/sons_screen.dart';
-// import 'package:Pedagodino/widgets/primeira_medalha.dart';
-// import 'package:Pedagodino/widgets/segunda_medalha.dart';
-// import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:flutter/material.dart';
-// import 'package:flutter_profile_picture/flutter_profile_picture.dart';
-// import 'package:get/get_navigation/src/snackbar/snackbar.dart';
-
-// import '../main.dart';
-// import '../widgets/button_widget.dart';
-// import '../widgets/drawer.dart';
-// import '../widgets/navigation_drawer_widget.dart';
-// import '../widgets/quarta_medalha.dart';
-// import '../widgets/terceira_medalha.dart';
-
-// class homeScreen extends StatefulWidget {
-//   const homeScreen({Key? key}) : super(key: key);
-
-//   @override
-//   _FeaturedScreenState createState() => _FeaturedScreenState();
-// }
-
-// class _FeaturedScreenState extends State<homeScreen> {
-//   @override
-//   Widget build(BuildContext context) => Scaffold(
-//       appBar: AppBar(),
-//       drawer: NavigationDrawerWidget(),
-//       // endDrawer: NavigationDrawerWidget(),
-//       body: Builder(
-//         builder: (context) => Container(
-//           alignment: Alignment.center,
-//           padding: EdgeInsets.symmetric(horizontal: 5),
-//           child: Column(
-//             children: [
-//               const SizedBox(height: 30),
-//               Padding(
-//                 padding: const EdgeInsets.only(top: 25),
-//                 child: Column(
-//                   children: [
-//                     InkWell(
-//                         onTap: (() {
-//                           //       Navigator.push(
-//                           //         context,
-//                           //         MaterialPageRoute(
-//                           //           builder: (context) => const letrasScreen(),
-//                           //         ),
-//                           //       );
-//                         }),
-//                         child: primeiraMedalha()),
-//                   ],
-//                 ),
-//               ),
-//               Padding(
-//                 padding: const EdgeInsets.only(top: 25),
-//                 child: Column(
-//                   children: [
-//                     InkWell(
-//                         onTap: (() {
-//                           //       Navigator.push(
-//                           //         context,
-//                           //         MaterialPageRoute(
-//                           //           builder: (context) => const letrasScreen(),
-//                           //         ),
-//                           //       );
-//                         }),
-//                         child: primeiraMedalha()),
-//                   ],
-//                 ),
-//               ),
-//               Padding(
-//                 padding: const EdgeInsets.only(top: 25),
-//                 child: Column(
-//                   children: [
-//                     InkWell(
-//                         onTap: (() {
-//                           //       Navigator.push(
-//                           //         context,
-//                           //         MaterialPageRoute(
-//                           //           builder: (context) => const letrasScreen(),
-//                           //         ),
-//                           //       );
-//                         }),
-//                         child: primeiraMedalha()),
-//                   ],
-//                 ),
-//               ),
-//               Padding(
-//                 padding: const EdgeInsets.only(top: 25),
-//                 child: Column(
-//                   children: [
-//                     InkWell(
-//                         onTap: (() {
-//                           //       Navigator.push(
-//                           //         context,
-//                           //         MaterialPageRoute(
-//                           //           builder: (context) => const letrasScreen(),
-//                           //         ),
-//                           //       );
-//                         }),
-//                         child: primeiraMedalha()),
-//                   ],
-//                 ),
-//               ),
-//               Padding(
-//                 padding: const EdgeInsets.only(top: 25),
-//                 child: Column(
-//                   children: [
-//                     InkWell(
-//                         onTap: (() {
-//                           //       Navigator.push(
-//                           //         context,
-//                           //         MaterialPageRoute(
-//                           //           builder: (context) => const letrasScreen(),
-//                           //         ),
-//                           //       );
-//                         }),
-//                         child: primeiraMedalha()),
-//                   ],
-//                 ),
-//               ),
-//             ],
-//           ),
-//         ),
-//       ));
-// }
 import 'package:Pedagodino/main.dart';
-import 'package:Pedagodino/screens/chat_selection.dart';
-import 'package:Pedagodino/screens/person_screen.dart';
-import 'package:Pedagodino/screens/profile_screen.dart';
+import 'package:Pedagodino/screens/clientScreens/chat_selection.dart';
+import 'package:Pedagodino/screens/clientScreens/person_screen.dart';
+import 'package:Pedagodino/screens/clientScreens/profile_screen.dart';
 import 'package:Pedagodino/screens/settings_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -143,7 +11,7 @@ class BabysitterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Babysitter App',
+      title: '',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -155,28 +23,39 @@ class BabysitterApp extends StatelessWidget {
 class BabysitterListScreen extends StatelessWidget {
   final List<Babysitter> babysitters = [
     Babysitter(
-      name: 'Anna',
-      age: 28,
+      name: 'vinicius',
+      age: 17,
       rating: 4.5,
-      bio:
-          'Experienced and reliable babysitter with a passion for childcare. Loves engaging in creative activities with children.',
-      location: 'New York',
+      bio: 'teste bio1: blablabla',
+      location: 'Santa Bárbara dOeste',
     ),
     Babysitter(
-      name: 'Emily',
-      age: 32,
+      name: 'rian',
+      age: 17,
       rating: 5.0,
-      bio:
-          'Highly skilled and dedicated babysitter. Excellent at creating a safe and nurturing environment for children.',
-      location: 'Los Angeles',
+      bio: 'teste bio2: blablabla',
+      location: 'Americana',
     ),
     Babysitter(
-      name: 'Sophia',
+      name: 'fulano',
       age: 25,
       rating: 4.2,
-      bio:
-          'Enthusiastic and caring babysitter with a gentle approach to childcare. Loves building strong connections with children.',
-      location: 'Chicago',
+      bio: 'teste usuario blablablabla',
+      location: 'Campinas',
+    ),
+    Babysitter(
+      name: 'ciclano',
+      age: 20,
+      rating: 4.2,
+      bio: 'teste usuario blablablabla',
+      location: 'Sumaré',
+    ),
+    Babysitter(
+      name: 'Nova Odessa',
+      age: 30,
+      rating: 4.2,
+      bio: 'teste usuario blablablabla',
+      location: 'Campinas',
     ),
   ];
 
@@ -184,7 +63,7 @@ class BabysitterListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Babysitters'),
+        title: Text(''),
       ),
       drawer: NavigationDrawer(),
       body: ListView.builder(

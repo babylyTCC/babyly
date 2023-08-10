@@ -4,16 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:Pedagodino/models/user_model.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 //import 'package:get/get.dart';
-import 'login.dart';
+import '../login.dart';
 
-class RegistrationScreen extends StatefulWidget {
-  const RegistrationScreen({Key? key}) : super(key: key);
+class RegistrationScreenClient extends StatefulWidget {
+  const RegistrationScreenClient({Key? key}) : super(key: key);
 
   @override
-  State<RegistrationScreen> createState() => _RegistrationScreenState();
+  State<RegistrationScreenClient> createState() =>
+      _RegistrationScreenClientState();
 }
 
-class _RegistrationScreenState extends State<RegistrationScreen> {
+class _RegistrationScreenClientState extends State<RegistrationScreenClient> {
   final _auth = FirebaseAuth.instance;
 
   final _formKey = GlobalKey<FormState>();
@@ -23,6 +24,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   final emailEditingController = TextEditingController();
   final passwordEditingController = TextEditingController();
   final confirmPasswordEditingController = TextEditingController();
+  String userType = ""; // Variável global para armazenar o tipo de usuário
+
+  void _setUserType(String type) {
+    setState(() {
+      userType = type;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -191,6 +199,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
         onPressed: () {
+          _setUserType("1");
           signUp(emailEditingController.text, passwordEditingController.text);
         },
         child: const Text(
@@ -200,6 +209,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
+    );
+    Text(
+      userType.isNotEmpty
+          ? "Tipo de usuário selecionado: $userType"
+          : "Nenhum tipo de usuário selecionado",
+      style: TextStyle(fontSize: 16),
     );
 
     return Scaffold(

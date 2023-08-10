@@ -18,10 +18,10 @@ class ChatApp extends StatelessWidget {
 
 class ChatSelectionScreen extends StatelessWidget {
   final List<Chat> chats = [
-    Chat(name: 'John Doe'),
-    Chat(name: 'Jane Smith'),
-    Chat(name: 'David Johnson'),
-    Chat(name: 'Emily Davis'),
+    Chat(name: 'vinicius'),
+    Chat(name: 'rian'),
+    // Chat(name: 'David Johnson'),
+    // Chat(name: 'Emily Davis'),
   ];
 
   @override

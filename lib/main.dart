@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       home: AnimatedSplashScreen(
         splash: Image.asset("assets/images/splash.png"),
         splashIconSize: double.infinity,
-        nextScreen: showHome ? const LoginScreen() : const OnboardingScreen(),
+        nextScreen: showHome ? const LoginScreen() : const LoginScreen(),
         splashTransition: SplashTransition.fadeTransition,
         duration: 2000,
       ),

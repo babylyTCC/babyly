@@ -1,9 +1,10 @@
-import 'package:Pedagodino/screens/home_screen.dart';
+import 'package:Pedagodino/screens/clientScreens/home_screen.dart';
+import 'package:Pedagodino/screens/type_selection.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:Pedagodino/screens/base_screen.dart';
+import 'package:Pedagodino/unused/base_screen.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'registration.dart';
+import 'clientScreens/registration_client.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -180,7 +181,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    const RegistrationScreen()));
+                                                    AuthScreen()));
                                       },
                                       child: const Text(
                                         "Cadastre-se",
