@@ -11,15 +11,15 @@ class ChatApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ChatSelectionScreen(),
+      home: ChatSelectionBBScreen(),
     );
   }
 }
 
-class ChatSelectionScreen extends StatelessWidget {
+class ChatSelectionBBScreen extends StatelessWidget {
   final List<Chat> chats = [
-    Chat(name: 'vinicius'),
-    Chat(name: 'rian'),
+    Chat(name: 'Maria'),
+    Chat(name: 'Antônio'),
     // Chat(name: 'David Johnson'),
     // Chat(name: 'Emily Davis'),
   ];

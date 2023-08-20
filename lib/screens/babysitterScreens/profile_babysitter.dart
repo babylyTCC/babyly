@@ -17,17 +17,18 @@ class ProfileApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ProfileScreen(),
+      home: ProfileScreenBabysitter(),
     );
   }
 }
 
-class ProfileScreen extends StatefulWidget {
+class ProfileScreenBabysitter extends StatefulWidget {
   @override
-  _ProfileScreenState createState() => _ProfileScreenState();
+  _ProfileScreenBabysitterState createState() =>
+      _ProfileScreenBabysitterState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _ProfileScreenBabysitterState extends State<ProfileScreenBabysitter> {
   late SharedPreferences _prefs;
   String _name = '';
   String _email = '';
