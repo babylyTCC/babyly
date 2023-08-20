@@ -259,15 +259,15 @@ class NavigationDrawer extends StatelessWidget {
               ));
             },
           ),
-          ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Settings'),
-            onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => settingsScreen(),
-              ));
-            },
-          ),
+          // ListTile(
+          //   leading: Icon(Icons.settings),
+          //   title: Text('Settings'),
+          //   onTap: () {
+          //     Navigator.of(context).push(MaterialPageRoute(
+          //       builder: (context) => settingsScreen(),
+          //     ));
+          //   },
+          // ),
           ListTile(
             leading: Icon(Icons.logout),
             title: Text('Logout'),

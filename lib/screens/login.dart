@@ -45,11 +45,11 @@ class _LoginScreenState extends State<LoginScreen> {
       decoration: InputDecoration(
         filled: true,
         fillColor: Color.fromARGB(100, 235, 237, 239),
-        prefixIcon: Icon(Icons.mail, color: Color.fromARGB(255, 138, 0, 236)),
+        // prefixIcon: Icon(Icons.mail, color: Color.fromARGB(255, 138, 0, 236)),
         contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
         hintText: "Email",
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(5),
           borderSide: BorderSide(color: Colors.white, width: 1.0),
         ),
       ),
@@ -76,15 +76,15 @@ class _LoginScreenState extends State<LoginScreen> {
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color.fromARGB(100, 235, 237, 239),
-        prefixIcon: const Icon(
-          Icons.vpn_key,
-          color: Color.fromARGB(255, 138, 0, 236),
-        ),
+        // prefixIcon: const Icon(
+        //   Icons.vpn_key,
+        //   color: Color.fromARGB(255, 138, 0, 236),
+        // ),
         contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         hintText: "Senha",
         hintStyle: const TextStyle(color: Color.fromARGB(179, 0, 0, 0)),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(5),
           borderSide: const BorderSide(color: Colors.white, width: 1.0),
         ),
       ),
@@ -92,7 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     final loginButton = Material(
       elevation: 5,
-      borderRadius: BorderRadius.circular(25),
+      borderRadius: BorderRadius.circular(5),
       color: const Color.fromARGB(255, 138, 0, 236),
       child: MaterialButton(
         padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),

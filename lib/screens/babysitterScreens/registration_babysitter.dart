@@ -58,12 +58,12 @@ class _RegistrationScreenBabysitterState
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color.fromARGB(100, 235, 237, 239),
-        prefixIcon: const Icon(Icons.account_circle,
-            color: Color.fromARGB(255, 138, 0, 236)),
+        // prefixIcon: const Icon(Icons.account_circle,
+        //     color: Color.fromARGB(255, 138, 0, 236)),
         contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         hintText: "Nome",
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(5),
           borderSide: const BorderSide(color: Colors.white, width: 1.0),
         ),
       ),
@@ -90,12 +90,12 @@ class _RegistrationScreenBabysitterState
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color.fromARGB(100, 235, 237, 239),
-        prefixIcon: const Icon(Icons.account_circle,
-            color: Color.fromARGB(255, 138, 0, 236)),
+        // prefixIcon: const Icon(Icons.account_circle,
+        //     color: Color.fromARGB(255, 138, 0, 236)),
         contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         hintText: "Sobrenome",
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(5),
           borderSide: const BorderSide(color: Colors.white, width: 1.0),
         ),
       ),
@@ -122,12 +122,12 @@ class _RegistrationScreenBabysitterState
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color.fromARGB(100, 235, 237, 239),
-        prefixIcon:
-            const Icon(Icons.mail, color: Color.fromARGB(255, 138, 0, 236)),
+        // prefixIcon:
+        //     const Icon(Icons.mail, color: Color.fromARGB(255, 138, 0, 236)),
         contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         hintText: "Email",
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(5),
           borderSide: const BorderSide(color: Colors.white, width: 1.0),
         ),
       ),
@@ -154,12 +154,12 @@ class _RegistrationScreenBabysitterState
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color.fromARGB(100, 235, 237, 239),
-        prefixIcon:
-            const Icon(Icons.mail, color: Color.fromARGB(255, 138, 0, 236)),
+        // prefixIcon:
+        //     const Icon(Icons.mail, color: Color.fromARGB(255, 138, 0, 236)),
         contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         hintText: "Escreva um pouco sobre você!",
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(5),
           borderSide: const BorderSide(color: Colors.white, width: 1.0),
         ),
       ),
@@ -186,12 +186,12 @@ class _RegistrationScreenBabysitterState
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color.fromARGB(100, 235, 237, 239),
-        prefixIcon:
-            const Icon(Icons.vpn_key, color: Color.fromARGB(255, 138, 0, 236)),
-        contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+        // prefixIcon:
+        //     const Icon(Icons.vpn_key, color: Color.fromARGB(255, 138, 0, 236)),
+        // contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         hintText: "Senha",
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(5),
           borderSide: const BorderSide(color: Colors.white, width: 1.0),
         ),
       ),
@@ -215,12 +215,12 @@ class _RegistrationScreenBabysitterState
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color.fromARGB(100, 235, 237, 239),
-        prefixIcon:
-            const Icon(Icons.vpn_key, color: Color.fromARGB(255, 138, 0, 236)),
+        // prefixIcon:
+        //     const Icon(Icons.vpn_key, color: Color.fromARGB(255, 138, 0, 236)),
         contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         hintText: "Confirme a senha",
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(5),
           borderSide: const BorderSide(color: Colors.white, width: 1.0),
         ),
       ),
@@ -228,7 +228,7 @@ class _RegistrationScreenBabysitterState
 
     final signUpButton = Material(
       elevation: 5,
-      borderRadius: BorderRadius.circular(25),
+      borderRadius: BorderRadius.circular(5),
       color: const Color.fromARGB(255, 138, 0, 236),
       child: MaterialButton(
         padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),

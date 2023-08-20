@@ -77,15 +77,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
     await _prefs.setStringList('persons', personsJson);
   }
 
-  Future<void> _updatePhoto() async {
-    final picker = ImagePicker();
-    final pickedFile = await picker.getImage(source: ImageSource.gallery);
-    if (pickedFile != null) {
-      setState(() {
-        _photo = File(pickedFile.path).readAsBytesSync();
-      });
-    }
-  }
+  // Future<void> _updatePhoto() async {
+  //   final picker = ImagePicker();
+  //   final pickedFile = await picker.getImage(source: ImageSource.gallery);
+  //   if (pickedFile != null) {
+  //     setState(() {
+  //       _photo = File(pickedFile.path).readAsBytesSync();
+  //     });
+  //   }
+  // }
 
   @override
   void initState() {
@@ -113,7 +113,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Column(
               children: <Widget>[
                 GestureDetector(
-                  onTap: _updatePhoto,
+                  // onTap: _updatePhoto,
                   child: CircleAvatar(
                     radius: 64.0,
                     backgroundImage: _photo != null
@@ -223,3 +223,8 @@ class Person {
     };
   }
 }
+// ─ Flutter Fix ──────────────────────────────────────────────────────────────────────────────┐
+// │ [!] Your project requires a newer version of the Kotlin Gradle plugin.                     │
+// │ Find the latest version on https://kotlinlang.org/docs/releases.html#release-details, then │
+// │ update /home/rafael/dev/babyly/android/build.gradle:                                       │
+// │ ext.kotlin_version = '<latest-version>'         
