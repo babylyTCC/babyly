@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:Pedagodino/models/user_model.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 //import 'package:get/get.dart';
-import '../login.dart';
+import '../clientScreens/login.dart';
+import 'home_babysitter.dart';
 
 class RegistrationScreenBabysitter extends StatefulWidget {
   const RegistrationScreenBabysitter({Key? key}) : super(key: key);
@@ -337,7 +338,7 @@ class _RegistrationScreenBabysitterState
         // Recupere a lista da outra tela e adicione um novo item
         var babysitters = await Navigator.push<List<String>>(
           context,
-          MaterialPageRoute(builder: (context) => BabysitterListScreen()),
+          MaterialPageRoute(builder: (context) => ChildListScreen()),
         );
 
         // Adicione o novo item à lista
@@ -349,7 +350,7 @@ class _RegistrationScreenBabysitterState
         }
 
         Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => const LoginScreen()));
+            MaterialPageRoute(builder: (context) => ChildListScreen()));
       } on FirebaseAuthException catch (error) {
         if (error.code != null) {
           if (error.code == 'auth/email-already-in-use') {

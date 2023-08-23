@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:Pedagodino/screens/login.dart';
+import 'package:Pedagodino/screens/clientScreens/login.dart';
 
 class settingsScreen extends StatefulWidget {
   const settingsScreen({Key? key}) : super(key: key);

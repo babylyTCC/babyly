@@ -1,10 +1,11 @@
+import 'package:Pedagodino/screens/clientScreens/home_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:Pedagodino/models/user_model.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 //import 'package:get/get.dart';
-import '../login.dart';
+import 'login.dart';
 
 class RegistrationScreenClient extends StatefulWidget {
   const RegistrationScreenClient({Key? key}) : super(key: key);
@@ -296,7 +297,7 @@ class _RegistrationScreenClientState extends State<RegistrationScreenClient> {
 
         // ignore: use_build_context_synchronously
         Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => const LoginScreen()));
+            MaterialPageRoute(builder: (context) => BabysitterListScreen()));
       } on FirebaseAuthException catch (error) {
         // ignore: unnecessary_null_comparison
         if (error.code != null) {
@@ -330,7 +331,7 @@ class _RegistrationScreenClientState extends State<RegistrationScreenClient> {
     if (!mounted) return;
     Navigator.of(context).push(MaterialPageRoute<LoginScreen>(
       builder: (BuildContext context) {
-        return const LoginScreen();
+        return BabysitterListScreen();
       },
     ));
   }

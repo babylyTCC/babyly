@@ -1,5 +1,6 @@
-import 'package:Pedagodino/screens/login.dart';
+import 'package:Pedagodino/screens/clientScreens/login.dart';
 import 'package:Pedagodino/screens/onboarding_screen.dart';
+import 'package:Pedagodino/screens/type_selection.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       home: AnimatedSplashScreen(
         splash: Image.asset("assets/images/splash.png"),
         splashIconSize: double.infinity,
-        nextScreen: showHome ? const LoginScreen() : const LoginScreen(),
+        nextScreen: showHome ? const LoginScreen() : AuthScreen(),
         splashTransition: SplashTransition.fadeTransition,
         duration: 2000,
       ),

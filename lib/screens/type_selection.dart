@@ -1,6 +1,11 @@
+import 'package:Pedagodino/screens/babysitterScreens/login_babysitter.dart';
 import 'package:Pedagodino/screens/babysitterScreens/registration_babysitter.dart';
 import 'package:Pedagodino/screens/clientScreens/registration_client.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import 'clientScreens/login.dart';
+import 'onboarding_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -40,16 +45,32 @@ class _AuthScreenState extends State<AuthScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => RegistrationScreenClient(),
-              )),
-              child: Text("Sou Responsável"),
+              onPressed: () async {
+                final prefs = await SharedPreferences.getInstance();
+                prefs.setBool('showHome', true);
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const QuizScreen(),
+                  ),
+                );
+              },
+              child: Text('Sou Mãe/Pai'),
             ),
             ElevatedButton(
-              onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => RegistrationScreenBabysitter(),
-              )),
-              child: Text("Sou uma Babá"),
+              onPressed: () async {
+                final prefs = await SharedPreferences.getInstance();
+                prefs.setBool('showHome', true);
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LoginBabyScreen(),
+                  ),
+                );
+              },
+              child: Text('Sou babá'),
             ),
             SizedBox(height: 20),
             Text(
