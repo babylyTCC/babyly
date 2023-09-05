@@ -16,7 +16,7 @@ class BabysitterApp extends StatelessWidget {
     return MaterialApp(
       title: '',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
       ),
       home: ChildListScreen(),
     );
@@ -199,7 +199,7 @@ class NavigationDrawer extends StatelessWidget {
         children: [
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: Colors.purple,
             ),
             child: Text(
               'Menu',
@@ -241,7 +241,7 @@ class NavigationDrawer extends StatelessWidget {
             title: Text('Settings'),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => settingsScreen(),
+                builder: (context) => Security(),
               ));
             },
           ),

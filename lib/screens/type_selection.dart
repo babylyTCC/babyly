@@ -3,7 +3,6 @@ import 'package:Pedagodino/screens/babysitterScreens/registration_babysitter.dar
 import 'package:Pedagodino/screens/clientScreens/registration_client.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import 'clientScreens/login.dart';
 import 'onboarding_screen.dart';
 
@@ -38,47 +37,53 @@ class _AuthScreenState extends State<AuthScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Escolha o Tipo de Usuário'),
+        backgroundColor: Colors.purple,
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              onPressed: () async {
-                final prefs = await SharedPreferences.getInstance();
-                prefs.setBool('showHome', true);
-
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const QuizScreen(),
-                  ),
-                );
-              },
-              child: Text('Sou Mãe/Pai'),
+            Material(
+              elevation: 5,
+              borderRadius: BorderRadius.circular(5),
+              color: Colors.purple,
+              child: MaterialButton(
+                padding: const EdgeInsets.all(20),
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => LoginScreen()));
+                },
+                child: const Text(
+                  "Sou mãe/pai",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
             ),
-            ElevatedButton(
-              onPressed: () async {
-                final prefs = await SharedPreferences.getInstance();
-                prefs.setBool('showHome', true);
-
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const LoginBabyScreen(),
-                  ),
-                );
-              },
-              child: Text('Sou babá'),
-            ),
-            SizedBox(height: 20),
-            Text(
-              userType.isNotEmpty
-                  ? "Tipo de usuário selecionado: $userType"
-                  : "Nenhum tipo de usuário selecionado",
-              style: TextStyle(fontSize: 16),
-            ),
+            const SizedBox(height: 40),
+            Material(
+              elevation: 5,
+              borderRadius: BorderRadius.circular(5),
+              color: Colors.purple,
+              child: MaterialButton(
+                padding: const EdgeInsets.all(20),
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => LoginBabyScreen()));
+                },
+                child: const Text(
+                  "Sou babá     ",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+            )
           ],
         ),
       ),

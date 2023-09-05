@@ -9,9 +9,9 @@ class PersonApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Person App',
+      title: '',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
       ),
       home: PersonScreen(),
     );
@@ -95,7 +95,8 @@ class _PersonScreenState extends State<PersonScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Person List'),
+        title: Text(''),
+        backgroundColor: Colors.purple,
       ),
       body: ListView.builder(
         itemCount: _persons.length,
@@ -118,25 +119,26 @@ class _PersonScreenState extends State<PersonScreen> {
         },
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.lightGreen,
         onPressed: () {
           showDialog(
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
-                title: Text('New Person'),
+                title: Text('Adicionar crianças'),
                 content: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     TextField(
                       controller: _nameController,
                       decoration: InputDecoration(
-                        labelText: 'Name',
+                        labelText: 'Nome',
                       ),
                     ),
                     TextField(
                       controller: _ageController,
                       decoration: InputDecoration(
-                        labelText: 'Age',
+                        labelText: 'Idade',
                       ),
                       keyboardType: TextInputType.number,
                     ),
@@ -148,7 +150,10 @@ class _PersonScreenState extends State<PersonScreen> {
                       _addPerson();
                       Navigator.of(context).pop();
                     },
-                    child: Text('Add'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.lightGreen,
+                    ),
+                    child: Text('Adicionar'),
                   ),
                 ],
               );

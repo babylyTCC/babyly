@@ -49,7 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
         contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
         hintText: "Email",
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(15),
           borderSide: BorderSide(color: Colors.white, width: 1.0),
         ),
       ),
@@ -84,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
         hintText: "Senha",
         hintStyle: const TextStyle(color: Color.fromARGB(179, 0, 0, 0)),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(15),
           borderSide: const BorderSide(color: Colors.white, width: 1.0),
         ),
       ),
@@ -92,14 +92,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
     final loginButton = Material(
       elevation: 5,
-      borderRadius: BorderRadius.circular(5),
+      borderRadius: BorderRadius.circular(15),
       color: const Color.fromARGB(255, 138, 0, 236),
       child: MaterialButton(
         padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         minWidth: MediaQuery.of(context).size.width,
         onPressed: () => login(emailController.text, passwordController.text),
         child: const Text(
-          "Login",
+          "Entrar",
           textAlign: TextAlign.center,
           style: TextStyle(
               fontSize: 16, color: Colors.white, fontWeight: FontWeight.bold),

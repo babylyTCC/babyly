@@ -33,7 +33,7 @@ class drawerNav extends StatelessWidget {
                   backgroundColor: Color.fromARGB(255, 165, 255, 137),
                   child: Text(
                     "A",
-                    style: TextStyle(fontSize: 30.0, color: Colors.blue),
+                    style: TextStyle(fontSize: 30.0, color: Colors.purple),
                   ), //Text
                 ), //circleAvatar
               ), //UserAccountDrawerHeader

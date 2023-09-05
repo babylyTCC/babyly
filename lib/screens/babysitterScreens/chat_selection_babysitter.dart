@@ -9,7 +9,7 @@ class ChatApp extends StatelessWidget {
     return MaterialApp(
       title: '',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
       ),
       home: ChatSelectionBBScreen(),
     );

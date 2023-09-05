@@ -49,6 +49,8 @@ dependencies:
   flutter_profile_picture: ^2.0.0
   image_picker: ^1.0.2
   google_maps_flutter: ^2.2.6
+  percent_indicator: ^4.2.3
+  mdi: ^5.0.0-nullsafety.0
 
 
 dev_dependencies:

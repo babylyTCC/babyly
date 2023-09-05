@@ -13,9 +13,9 @@ class ProfileApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Profile App',
+      title: '',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
       ),
       home: ProfileScreen(),
     );
@@ -104,7 +104,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: Text(''),
+        backgroundColor: Colors.purple,
       ),
       body: ListView(
         children: <Widget>[
@@ -167,7 +168,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       },
                     );
                   },
-                  child: Text('Save'),
+                  child: Text('Salvar alterações'),
                 ),
               ],
             ),

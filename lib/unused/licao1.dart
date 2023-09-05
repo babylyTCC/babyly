@@ -46,7 +46,7 @@
 //                 Text(
 //                   'Question $_questionNumber/${questions.length}',
 //                   style: TextStyle(
-//                     color: Colors.blue,
+//                     color: Colors.purple,
 //                     fontSize: 14,
 //                     decoration: TextDecoration.none,
 //                   ),

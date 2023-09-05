@@ -9,7 +9,7 @@ class ChatApp extends StatelessWidget {
     return MaterialApp(
       title: '',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
       ),
       home: ChatSelectionScreen(),
     );
@@ -29,6 +29,7 @@ class ChatSelectionScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(''),
+        backgroundColor: Colors.purple,
       ),
       body: ListView.builder(
         itemCount: chats.length,
@@ -43,6 +44,7 @@ class ChatSelectionScreen extends StatelessWidget {
               );
             },
             leading: CircleAvatar(
+              backgroundColor: Colors.lightGreen,
               child: Text(chats[index].name[0]),
             ),
             title: Text(chats[index].name),
@@ -77,6 +79,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.chat.name),
+        backgroundColor: Colors.purple,
       ),
       body: Column(
         children: <Widget>[
