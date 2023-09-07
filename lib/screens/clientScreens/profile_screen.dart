@@ -155,7 +155,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text('Profile Saved'),
+                          title: Text('Alterações Salvas!'),
                           actions: <Widget>[
                             TextButton(
                               onPressed: () {
@@ -168,12 +168,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       },
                     );
                   },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.lightGreen,
+                  ),
                   child: Text('Salvar alterações'),
                 ),
               ],
             ),
           ),
-          primeiraMedalha()
+          // primeiraMedalha()
         ],
       ),
     );

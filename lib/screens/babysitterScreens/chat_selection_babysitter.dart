@@ -29,6 +29,7 @@ class ChatSelectionBBScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(''),
+        backgroundColor: Colors.purple,
       ),
       body: ListView.builder(
         itemCount: chats.length,
@@ -77,6 +78,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.chat.name),
+        backgroundColor: Colors.purple,
       ),
       body: Column(
         children: <Widget>[

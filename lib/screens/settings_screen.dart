@@ -13,12 +13,12 @@ class _SecurityState extends State<Security> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.purple,
         iconTheme: const IconThemeData(
           color: Colors.black87, //change your color here
         ),
         title: const Text(
-          "Security",
+          "",
           style: TextStyle(color: Colors.black87),
         ),
       ),
@@ -27,25 +27,26 @@ class _SecurityState extends State<Security> {
         padding: const EdgeInsets.all(15.0),
         child: ListView(
           children: [
-            MenuItems(icon: Icons.key_outlined, text: "password", ontap: () {}),
+            MenuItems(
+                icon: Icons.key_outlined, text: "Alterar senha", ontap: () {}),
             MenuItems(
                 icon: Icons.location_on_outlined,
-                text: "Login Activity",
+                text: "Local de atuação",
                 ontap: () {}),
             MenuItems(
                 icon: Icons.contacts_outlined,
-                text: "Contact Info",
+                text: "Sobre o Aplicativo",
                 ontap: () {}),
-            MenuItems(
-                icon: Icons.phone_android_outlined,
-                text: "Two Factor Authentication",
-                ontap: () {}),
-            MenuItems(
-                icon: Icons.quick_contacts_dialer_outlined,
-                text: "Legacy Contact",
-                ontap: () {}),
-            MenuItems(icon: Icons.block, text: "Block User", ontap: () {}),
-            MenuItems(icon: Icons.devices, text: "Devices", ontap: () {}),
+            // MenuItems(
+            //     icon: Icons.phone_android_outlined,
+            //     text: "Two Factor Authentication",
+            //     ontap: () {}),
+            // MenuItems(
+            //     icon: Icons.quick_contacts_dialer_outlined,
+            //     text: "Legacy Contact",
+            //     ontap: () {}),
+            // MenuItems(icon: Icons.block, text: "Block User", ontap: () {}),
+            // MenuItems(icon: Icons.devices, text: "Devices", ontap: () {}),
           ],
         ),
       ),

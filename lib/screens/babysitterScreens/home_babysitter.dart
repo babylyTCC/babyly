@@ -15,6 +15,7 @@ class BabysitterApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '',
+      color: Colors.purple,
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
@@ -57,6 +58,7 @@ class ChildListScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(''),
+        backgroundColor: Colors.purple,
       ),
       drawer: NavigationDrawer(),
       body: ListView.builder(
