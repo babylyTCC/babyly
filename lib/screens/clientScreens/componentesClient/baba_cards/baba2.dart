@@ -1,8 +1,8 @@
 import 'package:Pedagodino/models/globals.dart';
 import 'package:flutter/material.dart';
 
-class segundaMedalha extends StatelessWidget {
-  const segundaMedalha({
+class baba2 extends StatelessWidget {
+  const baba2({
     Key? key,
   }) : super(key: key);
 
@@ -12,7 +12,7 @@ class segundaMedalha extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Card(
         color: Color.fromARGB(255, 249, 247, 247),
-        margin: const EdgeInsets.all(0),
+        margin: const EdgeInsets.all(10),
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 16.0,
@@ -24,13 +24,13 @@ class segundaMedalha extends StatelessWidget {
               medalha2
                   ? IconButton(
                       onPressed: () {},
-                      icon: Image.asset('assets/icons/medalha2.png'),
+                      icon: Image.asset('assets/icons/babysitter2.jpg'),
                       iconSize: 40,
                     )
                   : IconButton(
                       onPressed: () {},
-                      icon: const Icon(Icons.access_time,
-                          size: 40.0, color: Color.fromARGB(255, 138, 0, 236)),
+                      icon: Image.asset('assets/icons/babysitter2.jpg'),
+                      iconSize: 60,
                     ),
               const SizedBox(width: 24.0),
               Column(
@@ -38,14 +38,14 @@ class segundaMedalha extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   const Text(
-                    "fulano",
+                    "Maria",
                     style: TextStyle(
                       fontSize: 18.0,
                     ),
                   ),
                   const SizedBox(height: 4.0),
                   Text(
-                    "teste de componente",
+                    "Santa Bárbara d'Oeste - SP",
                     style: TextStyle(
                       color: Colors.grey[700],
                       fontSize: 12.0,

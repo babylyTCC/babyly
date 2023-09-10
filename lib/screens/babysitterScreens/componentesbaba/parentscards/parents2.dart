@@ -1,8 +1,8 @@
 import 'package:Pedagodino/models/globals.dart';
 import 'package:flutter/material.dart';
 
-class terceiraMedalha extends StatelessWidget {
-  const terceiraMedalha({
+class parents2 extends StatelessWidget {
+  const parents2({
     Key? key,
   }) : super(key: key);
 
@@ -21,10 +21,10 @@ class terceiraMedalha extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              medalha3
+              medalha2
                   ? IconButton(
                       onPressed: () {},
-                      icon: Image.asset('assets/icons/medalha3.png'),
+                      icon: Image.asset('assets/icons/medalha2.png'),
                       iconSize: 40,
                     )
                   : IconButton(
@@ -38,14 +38,14 @@ class terceiraMedalha extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   const Text(
-                    "fulano",
+                    "Patrícia",
                     style: TextStyle(
                       fontSize: 18.0,
                     ),
                   ),
                   const SizedBox(height: 4.0),
                   Text(
-                    "teste de componente",
+                    "Leonardo - 10 anos",
                     style: TextStyle(
                       color: Colors.grey[700],
                       fontSize: 12.0,

@@ -1,64 +1,25 @@
-import 'package:Pedagodino/main.dart';
+import 'package:Pedagodino/screens/babysitterScreens/profile_babysitter.dart';
 import 'package:Pedagodino/screens/clientScreens/chat_selection.dart';
-import 'package:Pedagodino/screens/clientScreens/person_screen.dart';
-import 'package:Pedagodino/screens/clientScreens/profile_screen.dart';
+import 'package:Pedagodino/screens/clientScreens/componentesClient/babas_details/bdetails_3.dart';
+import 'package:Pedagodino/screens/clientScreens/componentesClient/babas_details/bdetails_4.dart';
+import 'package:Pedagodino/screens/clientScreens/login.dart';
 import 'package:Pedagodino/screens/settings_screen.dart';
+import 'package:Pedagodino/screens/clientScreens/componentesClient/baba_cards/baba2.dart';
+import 'package:Pedagodino/screens/clientScreens/componentesClient/baba_cards/baba3.dart';
+import 'package:Pedagodino/screens/clientScreens/componentesClient/baba_cards/baba4.dart';
 import 'package:flutter/material.dart';
+import 'package:Pedagodino/screens/clientScreens/componentesClient/baba_cards/baba1.dart';
 
-void main() => runApp(BabysitterApp());
+import 'componentesClient/babas_details/bdetails_1.dart';
+import 'componentesClient/babas_details/bdetails_2.dart';
 
-class BabysitterApp extends StatelessWidget {
+class BabysitterListScreen extends StatefulWidget {
+  const BabysitterListScreen({Key? key}) : super(key: key);
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-      ),
-      home: BabysitterListScreen(),
-    );
-  }
+  _BabysitterListScreenState createState() => _BabysitterListScreenState();
 }
 
-class BabysitterListScreen extends StatelessWidget {
-  final List<Babysitter> babysitters = [
-    Babysitter(
-      name: 'vinicius',
-      age: 17,
-      rating: 4.5,
-      bio: 'teste bio1: blablabla',
-      location: 'Santa Bárbara dOeste',
-    ),
-    Babysitter(
-      name: 'rian',
-      age: 17,
-      rating: 5.0,
-      bio: 'teste bio2: blablabla',
-      location: 'Americana',
-    ),
-    Babysitter(
-      name: 'fulano',
-      age: 25,
-      rating: 4.2,
-      bio: 'teste usuario blablablabla',
-      location: 'Campinas',
-    ),
-    Babysitter(
-      name: 'ciclano',
-      age: 20,
-      rating: 4.2,
-      bio: 'teste usuario blablablabla',
-      location: 'Sumaré',
-    ),
-    Babysitter(
-      name: 'Nova Odessa',
-      age: 30,
-      rating: 4.2,
-      bio: 'teste usuario blablablabla',
-      location: 'Campinas',
-    ),
-  ];
-
+class _BabysitterListScreenState extends State<BabysitterListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,136 +28,98 @@ class BabysitterListScreen extends StatelessWidget {
         backgroundColor: Colors.purple,
       ),
       drawer: NavigationDrawer(),
-      body: ListView.builder(
-        itemCount: babysitters.length,
-        itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      BabysitterDetailScreen(babysitter: babysitters[index]),
-                ),
-              );
-            },
-            child: Card(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      babysitters[index].name,
-                      style: TextStyle(
-                          fontSize: 18.0, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(height: 8.0),
-                    Text('Age: ${babysitters[index].age}'),
-                    SizedBox(height: 8.0),
-                    Row(
-                      children: [
-                        Icon(Icons.star, color: Colors.yellow),
-                        SizedBox(width: 4.0),
-                        Text(babysitters[index].rating.toString()),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          );
-        },
-      ),
-    );
-  }
-}
-
-class Babysitter {
-  final String name;
-  final int age;
-  final double rating;
-  final String bio;
-  final String location;
-
-  Babysitter({
-    required this.name,
-    required this.age,
-    required this.rating,
-    required this.bio,
-    required this.location,
-  });
-}
-
-class BabysitterDetailScreen extends StatelessWidget {
-  final Babysitter babysitter;
-
-  BabysitterDetailScreen({required this.babysitter});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(babysitter.name),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: <Widget>[
+            SizedBox(height: 30),
             Text(
-              'Age: ${babysitter.age}',
-              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+              'Profissionais na sua área agora:',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8.0),
-            Row(
-              children: [
-                Icon(Icons.star, color: Colors.yellow),
-                SizedBox(width: 4.0),
-                Text(babysitter.rating.toString()),
-              ],
-            ),
-            SizedBox(height: 16.0),
-            Text(
-              'Bio:',
-              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
-            ),
-            Text(babysitter.bio),
-            SizedBox(height: 16.0),
-            Text(
-              'Location:',
-              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
-            ),
-            Text(babysitter.location),
-            SizedBox(height: 32.0),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: FloatingActionButton(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => ChatSelectionScreen(),
-                  ));
-                  // showDialog(
-                  //   context: context,
-                  //   builder: (BuildContext context) {
-                  //     return AlertDialog(
-                  //       title: Text('Start Chat'),
-                  //       content: Text(
-                  //           'Chat functionality will be implemented here.'),
-                  //       actions: <Widget>[
-                  //         TextButton(
-                  //           onPressed: () {
-                  //             Navigator.of(context).pop();
-                  //           },
-                  //           child: Text('OK'),
-                  //         ),
-                  //       ],
-                  //     );
-                  //   },
-                  // );
-                },
-                child: Icon(Icons.chat),
+            SizedBox(height: 30),
+            InkWell(
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 0),
+                child: Container(
+                  height: 110.0,
+                  margin: const EdgeInsets.all(0),
+                  child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index) => const baba1(),
+                    shrinkWrap: true,
+                    itemCount: 1,
+                  ),
+                ),
               ),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => bdetails1(),
+                ));
+              },
+            ),
+            const SizedBox(height: 10),
+            InkWell(
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 0),
+                child: Container(
+                  height: 110.0,
+                  margin: const EdgeInsets.all(0),
+                  child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index) => const baba2(),
+                    shrinkWrap: true,
+                    itemCount: 1,
+                  ),
+                ),
+              ),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => bdetails2(),
+                ));
+              },
+            ),
+            const SizedBox(height: 10),
+            InkWell(
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 0),
+                child: Container(
+                  height: 110.0,
+                  margin: const EdgeInsets.all(0),
+                  child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index) => const baba3(),
+                    shrinkWrap: true,
+                    itemCount: 1,
+                  ),
+                ),
+              ),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => bdetails3(),
+                ));
+              },
+            ),
+            const SizedBox(height: 10),
+            InkWell(
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 0),
+                child: Container(
+                  height: 110.0,
+                  margin: const EdgeInsets.all(0),
+                  child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index) => const baba4(),
+                    shrinkWrap: true,
+                    itemCount: 1,
+                  ),
+                ),
+              ),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => bdetails4(),
+                ));
+              },
             ),
           ],
         ),
@@ -225,15 +148,6 @@ class NavigationDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.add_circle),
-            title: Text('Minhas crianças'),
-            onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => PersonScreen(),
-              ));
-            },
-          ),
-          ListTile(
             leading: Icon(Icons.medical_services),
             title: Text('Babás'),
             onTap: () {
@@ -256,7 +170,7 @@ class NavigationDrawer extends StatelessWidget {
             title: Text('Profile'),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => ProfileScreen(),
+                builder: (context) => ProfileApp(),
               ));
             },
           ),
@@ -273,8 +187,9 @@ class NavigationDrawer extends StatelessWidget {
             leading: Icon(Icons.logout),
             title: Text('Logout'),
             onTap: () {
-              Navigator.pop(context);
-              // Implement logout functionality
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => LoginScreen(),
+              ));
             },
           ),
         ],

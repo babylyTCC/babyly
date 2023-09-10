@@ -1,18 +1,18 @@
 import 'package:Pedagodino/models/globals.dart';
 import 'package:flutter/material.dart';
 
-class quartaMedalha extends StatelessWidget {
-  const quartaMedalha({
+class parents1 extends StatelessWidget {
+  const parents1({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Card(
         color: Color.fromARGB(255, 249, 247, 247),
-        margin: EdgeInsets.all(0),
+        margin: const EdgeInsets.all(0),
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 16.0,
@@ -20,11 +20,11 @@ class quartaMedalha extends StatelessWidget {
           ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              medalha4
+            children: [
+              medalha1
                   ? IconButton(
                       onPressed: () {},
-                      icon: Image.asset('assets/icons/medalha4.png'),
+                      icon: Image.asset('assets/icons/medalha1.png'),
                       iconSize: 40,
                     )
                   : IconButton(
@@ -38,14 +38,14 @@ class quartaMedalha extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   const Text(
-                    "fulano",
+                    "César",
                     style: TextStyle(
                       fontSize: 18.0,
                     ),
                   ),
                   const SizedBox(height: 4.0),
                   Text(
-                    "teste de componente",
+                    "Enzo - 2 anos",
                     style: TextStyle(
                       color: Colors.grey[700],
                       fontSize: 12.0,

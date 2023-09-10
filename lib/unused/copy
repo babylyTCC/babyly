@@ -74,7 +74,7 @@ class Body extends StatelessWidget {
                   //         ),
                   //       );
                 }),
-                child: primeiraMedalha()),
+                child: baba1()),
           ],
         ),
       ),
@@ -91,7 +91,7 @@ class Body extends StatelessWidget {
                   //         ),
                   //       );
                 }),
-                child: segundaMedalha()),
+                child: baba2()),
           ],
         ),
       ),
@@ -108,7 +108,7 @@ class Body extends StatelessWidget {
                   //   ),
                   // );
                 }),
-                child: terceiraMedalha()),
+                child: baba3()),
           ],
         ),
       ),
@@ -125,7 +125,7 @@ class Body extends StatelessWidget {
                   //   ),
                   // );
                 }),
-                child: quartaMedalha()),
+                child: baba4()),
           ],
         ),
       ),

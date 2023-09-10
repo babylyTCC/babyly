@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
-import 'package:Pedagodino/widgets/primeira_medalha.dart';
+import 'package:Pedagodino/screens/clientScreens/componentesClient/baba_cards/baba1.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
@@ -176,7 +176,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ],
             ),
           ),
-          // primeiraMedalha()
+          // baba1()
         ],
       ),
     );
