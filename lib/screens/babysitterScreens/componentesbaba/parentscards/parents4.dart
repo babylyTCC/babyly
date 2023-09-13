@@ -1,18 +1,18 @@
 import 'package:Pedagodino/models/globals.dart';
 import 'package:flutter/material.dart';
 
-class parents4 extends StatelessWidget {
-  const parents4({
+class parent4 extends StatelessWidget {
+  const parent4({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Card(
         color: Color.fromARGB(255, 249, 247, 247),
-        margin: EdgeInsets.all(0),
+        margin: const EdgeInsets.all(10),
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 16.0,
@@ -20,17 +20,17 @@ class parents4 extends StatelessWidget {
           ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              medalha4
+            children: [
+              medalha1
                   ? IconButton(
                       onPressed: () {},
-                      icon: Image.asset('assets/icons/medalha4.png'),
+                      icon: Image.asset('assets/icons/parent4.png'),
                       iconSize: 40,
                     )
                   : IconButton(
                       onPressed: () {},
-                      icon: const Icon(Icons.access_time,
-                          size: 40.0, color: Color.fromARGB(255, 138, 0, 236)),
+                      icon: Image.asset('assets/icons/parent4.png'),
+                      iconSize: 60,
                     ),
               const SizedBox(width: 24.0),
               Column(
@@ -38,14 +38,14 @@ class parents4 extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   const Text(
-                    "João",
+                    "Daniel",
                     style: TextStyle(
                       fontSize: 18.0,
                     ),
                   ),
                   const SizedBox(height: 4.0),
                   Text(
-                    "Luís - 4 anos",
+                    "Juliana - 3 anos",
                     style: TextStyle(
                       color: Colors.grey[700],
                       fontSize: 12.0,

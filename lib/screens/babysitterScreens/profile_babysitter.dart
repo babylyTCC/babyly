@@ -13,7 +13,8 @@ class ProfileApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Profile App',
+      title: '',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
@@ -105,7 +106,7 @@ class _ProfileScreenBabysitterState extends State<ProfileScreenBabysitter> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: Text(''),
       ),
       body: ListView(
         children: <Widget>[
@@ -119,7 +120,7 @@ class _ProfileScreenBabysitterState extends State<ProfileScreenBabysitter> {
                     radius: 64.0,
                     backgroundImage: _photo != null
                         ? MemoryImage(_photo!)
-                        : AssetImage('assets/default_profile.png')
+                        : AssetImage('icons/default_profile.png')
                             as ImageProvider,
                   ),
                 ),
@@ -173,7 +174,7 @@ class _ProfileScreenBabysitterState extends State<ProfileScreenBabysitter> {
               ],
             ),
           ),
-          baba1()
+          //baba1()
         ],
       ),
     );

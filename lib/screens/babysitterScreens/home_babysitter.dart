@@ -1,14 +1,15 @@
 import 'package:Pedagodino/screens/babysitterScreens/chat_selection_babysitter.dart';
+import 'package:Pedagodino/screens/babysitterScreens/componentesbaba/parentsdetails/pdetails1.dart';
+import 'package:Pedagodino/screens/babysitterScreens/componentesbaba/parentsdetails/pdetails2.dart';
+import 'package:Pedagodino/screens/babysitterScreens/componentesbaba/parentsdetails/pdetails3.dart';
+import 'package:Pedagodino/screens/babysitterScreens/componentesbaba/parentsdetails/pdetails4.dart';
 import 'package:Pedagodino/screens/babysitterScreens/login_babysitter.dart';
 import 'package:Pedagodino/screens/babysitterScreens/profile_babysitter.dart';
 import 'package:Pedagodino/screens/clientScreens/chat_selection.dart';
 import 'package:Pedagodino/screens/clientScreens/login.dart';
 import 'package:Pedagodino/screens/settings_screen.dart';
-import 'package:Pedagodino/screens/clientScreens/componentesClient/baba_cards/baba2.dart';
-import 'package:Pedagodino/screens/clientScreens/componentesClient/baba_cards/baba3.dart';
-import 'package:Pedagodino/screens/clientScreens/componentesClient/baba_cards/baba4.dart';
+
 import 'package:flutter/material.dart';
-import 'package:Pedagodino/screens/clientScreens/componentesClient/baba_cards/baba1.dart';
 
 import 'componentesbaba/parentscards/parents1.dart';
 import 'componentesbaba/parentscards/parents2.dart';
@@ -34,49 +35,12 @@ class _ChildListScreenState extends State<ChildListScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 0),
-              child: Container(
-                height: 110.0,
-                margin: const EdgeInsets.all(0),
-                child: ListView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) => const parents1(),
-                  shrinkWrap: true,
-                  itemCount: 1,
-                ),
-              ),
+            SizedBox(height: 30),
+            Text(
+              'Na sua área agora:',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 0),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 0),
-              child: Container(
-                height: 110.0,
-                margin: const EdgeInsets.all(0),
-                child: ListView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) => const parents2(),
-                  shrinkWrap: true,
-                  itemCount: 1,
-                ),
-              ),
-            ),
-            const SizedBox(height: 0),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 0),
-              child: Container(
-                height: 110.0,
-                margin: const EdgeInsets.all(0),
-                child: ListView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) => const parents3(),
-                  shrinkWrap: true,
-                  itemCount: 1,
-                ),
-              ),
-            ),
-            const SizedBox(height: 0),
+            SizedBox(height: 30),
             InkWell(
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 0),
@@ -85,7 +49,7 @@ class _ChildListScreenState extends State<ChildListScreen> {
                   margin: const EdgeInsets.all(0),
                   child: ListView.builder(
                     physics: const NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index) => const parents4(),
+                    itemBuilder: (context, index) => const parent1(),
                     shrinkWrap: true,
                     itemCount: 1,
                   ),
@@ -93,7 +57,70 @@ class _ChildListScreenState extends State<ChildListScreen> {
               ),
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => Security(),
+                  builder: (context) => pdetails1(),
+                ));
+              },
+            ),
+            const SizedBox(height: 10),
+            InkWell(
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 0),
+                child: Container(
+                  height: 110.0,
+                  margin: const EdgeInsets.all(0),
+                  child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index) => const parent2(),
+                    shrinkWrap: true,
+                    itemCount: 1,
+                  ),
+                ),
+              ),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => pdetails2(),
+                ));
+              },
+            ),
+            const SizedBox(height: 10),
+            InkWell(
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 0),
+                child: Container(
+                  height: 110.0,
+                  margin: const EdgeInsets.all(0),
+                  child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index) => const parent3(),
+                    shrinkWrap: true,
+                    itemCount: 1,
+                  ),
+                ),
+              ),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => pdetails3(),
+                ));
+              },
+            ),
+            const SizedBox(height: 10),
+            InkWell(
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 0),
+                child: Container(
+                  height: 110.0,
+                  margin: const EdgeInsets.all(0),
+                  child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index) => const parent4(),
+                    shrinkWrap: true,
+                    itemCount: 1,
+                  ),
+                ),
+              ),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => pdetails4(),
                 ));
               },
             ),
@@ -146,7 +173,7 @@ class NavigationDrawer extends StatelessWidget {
             title: Text('Profile'),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => ProfileScreenBabysitter(),
+                builder: (context) => ProfileApp(),
               ));
             },
           ),

@@ -1,8 +1,8 @@
 import 'package:Pedagodino/models/globals.dart';
 import 'package:flutter/material.dart';
 
-class parents1 extends StatelessWidget {
-  const parents1({
+class parent1 extends StatelessWidget {
+  const parent1({
     Key? key,
   }) : super(key: key);
 
@@ -12,7 +12,7 @@ class parents1 extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Card(
         color: Color.fromARGB(255, 249, 247, 247),
-        margin: const EdgeInsets.all(0),
+        margin: const EdgeInsets.all(10),
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 16.0,
@@ -24,13 +24,13 @@ class parents1 extends StatelessWidget {
               medalha1
                   ? IconButton(
                       onPressed: () {},
-                      icon: Image.asset('assets/icons/medalha1.png'),
+                      icon: Image.asset('assets/icons/parent1.png'),
                       iconSize: 40,
                     )
                   : IconButton(
                       onPressed: () {},
-                      icon: const Icon(Icons.access_time,
-                          size: 40.0, color: Color.fromARGB(255, 138, 0, 236)),
+                      icon: Image.asset('assets/icons/parent1.png'),
+                      iconSize: 60,
                     ),
               const SizedBox(width: 24.0),
               Column(
@@ -38,14 +38,14 @@ class parents1 extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   const Text(
-                    "César",
+                    "Erick",
                     style: TextStyle(
                       fontSize: 18.0,
                     ),
                   ),
                   const SizedBox(height: 4.0),
                   Text(
-                    "Enzo - 2 anos",
+                    "Enzo - 4 anos",
                     style: TextStyle(
                       color: Colors.grey[700],
                       fontSize: 12.0,
