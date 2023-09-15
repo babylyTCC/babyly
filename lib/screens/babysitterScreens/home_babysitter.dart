@@ -5,8 +5,6 @@ import 'package:Pedagodino/screens/babysitterScreens/componentesbaba/parentsdeta
 import 'package:Pedagodino/screens/babysitterScreens/componentesbaba/parentsdetails/pdetails4.dart';
 import 'package:Pedagodino/screens/babysitterScreens/login_babysitter.dart';
 import 'package:Pedagodino/screens/babysitterScreens/profile_babysitter.dart';
-import 'package:Pedagodino/screens/clientScreens/chat_selection.dart';
-import 'package:Pedagodino/screens/clientScreens/login.dart';
 import 'package:Pedagodino/screens/settings_screen.dart';
 
 import 'package:flutter/material.dart';
@@ -173,7 +171,7 @@ class NavigationDrawer extends StatelessWidget {
             title: Text('Profile'),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => ProfileApp(),
+                builder: (context) => ProfileScreenBabysitter(),
               ));
             },
           ),

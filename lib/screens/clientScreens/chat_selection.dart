@@ -1,5 +1,7 @@
+import 'package:Pedagodino/screens/clientScreens/chat_detailsclient.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:Pedagodino/utilities/custom_heading.dart';
 
 void main() => runApp(ChatApp());
 
@@ -17,135 +19,376 @@ class ChatApp extends StatelessWidget {
 }
 
 class ChatSelectionScreen extends StatelessWidget {
-  final List<Chat> chats = [
-    Chat(name: 'vinicius'),
-    Chat(name: 'rian'),
-    // Chat(name: 'David Johnson'),
-    // Chat(name: 'Emily Davis'),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(''),
+        elevation: 0.4,
         backgroundColor: Colors.purple,
       ),
-      body: ListView.builder(
-        itemCount: chats.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ChatScreen(chat: chats[index]),
-                ),
-              );
-            },
-            leading: CircleAvatar(
-              backgroundColor: Colors.lightGreen,
-              child: Text(chats[index].name[0]),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            SizedBox(height: 30),
+            Padding(
+              padding: const EdgeInsets.only(right: 235.0),
+              child: Text(
+                'Recentes',
+                style: TextStyle(
+                    color: Color(0xff8C68EC),
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
-            title: Text(chats[index].name),
-          );
-        },
-      ),
-    );
-  }
-}
-
-class ChatScreen extends StatefulWidget {
-  final Chat chat;
-
-  ChatScreen({required this.chat});
-
-  @override
-  _ChatScreenState createState() => _ChatScreenState();
-}
-
-class _ChatScreenState extends State<ChatScreen> {
-  final TextEditingController _textController = TextEditingController();
-  List<String> _messages = [];
-
-  @override
-  void initState() {
-    super.initState();
-    _loadMessages();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.chat.name),
-        backgroundColor: Colors.purple,
-      ),
-      body: Column(
-        children: <Widget>[
-          Expanded(
-            child: ListView.builder(
-              itemCount: _messages.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(_messages[index]),
+            SizedBox(height: 10),
+            Container(
+              height: 150,
+              child: ListView.builder(
+                itemCount: 1,
+                shrinkWrap: true,
+                physics: ClampingScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.all(15),
+                itemBuilder: (BuildContext context, int index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 220.0),
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          width: 90,
+                          height: 90,
+                          margin: EdgeInsets.only(right: 15),
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              begin: Alignment.topRight,
+                              end: Alignment.bottomRight,
+                              stops: [0.1, 1],
+                              colors: [
+                                Color(0xFF8C68EC),
+                                Color.fromARGB(255, 153, 27, 255),
+                              ],
+                            ),
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                          child: CircleAvatar(
+                            radius: 70,
+                            backgroundImage:
+                                AssetImage('assets/icons/babysitter1.jpg'),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 10),
+                          child: Text('Joana'),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+            ListView.builder(
+              itemCount: 1,
+              shrinkWrap: true,
+              physics: ClampingScrollPhysics(),
+              scrollDirection: Axis.vertical,
+              itemBuilder: (BuildContext context, int index) {
+                return Material(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ChatDetailsClient(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(15, 5, 15, 5),
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withAlpha(50),
+                            offset: Offset(0, 0),
+                            blurRadius: 5,
+                          ),
+                        ],
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.white,
+                      ),
+                      child: Row(
+                        children: <Widget>[
+                          Stack(
+                            children: <Widget>[
+                              Container(
+                                child: CircleAvatar(
+                                  backgroundImage: AssetImage(
+                                      'assets/icons/babysitter2.jpg'),
+                                  minRadius: 35,
+                                  backgroundColor: Colors.grey[200],
+                                ),
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(left: 10),
+                          ),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'Maria',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 5),
+                                ),
+                                Text(
+                                  'teste chat',
+                                  style: TextStyle(
+                                    color: Color(0xff8C68EC),
+                                    fontSize: 14,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 5),
+                                ),
+                                Text(
+                                  '13:58',
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 12,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: EdgeInsets.only(right: 15),
+                                child: Icon(
+                                  Icons.chevron_right,
+                                  size: 18,
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
                 );
               },
             ),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 8.0),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: TextField(
-                    controller: _textController,
-                    decoration: InputDecoration(
-                      hintText: 'Digite uma mensagem...',
+            ListView.builder(
+              itemCount: 1,
+              shrinkWrap: true,
+              physics: ClampingScrollPhysics(),
+              scrollDirection: Axis.vertical,
+              itemBuilder: (BuildContext context, int index) {
+                return Material(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ChatDetailsClient(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(15, 5, 15, 5),
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withAlpha(50),
+                            offset: Offset(0, 0),
+                            blurRadius: 5,
+                          ),
+                        ],
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.white,
+                      ),
+                      child: Row(
+                        children: <Widget>[
+                          Stack(
+                            children: <Widget>[
+                              Container(
+                                child: CircleAvatar(
+                                  backgroundImage: AssetImage(
+                                      'assets/icons/babysitter3.jpg'),
+                                  minRadius: 35,
+                                  backgroundColor: Colors.grey[200],
+                                ),
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(left: 10),
+                          ),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'Denise',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 5),
+                                ),
+                                Text(
+                                  'teste chat',
+                                  style: TextStyle(
+                                    color: Color(0xff8C68EC),
+                                    fontSize: 14,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 5),
+                                ),
+                                Text(
+                                  '09:00',
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 12,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: EdgeInsets.only(right: 15),
+                                child: Icon(
+                                  Icons.chevron_right,
+                                  size: 18,
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                IconButton(
-                  icon: Icon(Icons.send),
-                  onPressed: () {
-                    _sendMessage(_textController.text);
-                  },
-                ),
-              ],
+                );
+              },
             ),
-          ),
-        ],
+            ListView.builder(
+              itemCount: 1,
+              shrinkWrap: true,
+              physics: ClampingScrollPhysics(),
+              scrollDirection: Axis.vertical,
+              itemBuilder: (BuildContext context, int index) {
+                return Material(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ChatDetailsClient(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(15, 5, 15, 5),
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withAlpha(50),
+                            offset: Offset(0, 0),
+                            blurRadius: 5,
+                          ),
+                        ],
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.white,
+                      ),
+                      child: Row(
+                        children: <Widget>[
+                          Stack(
+                            children: <Widget>[
+                              Container(
+                                child: CircleAvatar(
+                                  backgroundImage: AssetImage(
+                                      'assets/icons/babysitter4.jpeg'),
+                                  minRadius: 35,
+                                  backgroundColor: Colors.grey[200],
+                                ),
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(left: 10),
+                          ),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'Karen',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 5),
+                                ),
+                                Text(
+                                  'teste chat',
+                                  style: TextStyle(
+                                    color: Color(0xff8C68EC),
+                                    fontSize: 14,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 5),
+                                ),
+                                Text(
+                                  '11:00',
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 12,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: EdgeInsets.only(right: 15),
+                                child: Icon(
+                                  Icons.chevron_right,
+                                  size: 18,
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
-
-  Future<void> _loadMessages() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? messagesString = prefs.getString(widget.chat.name);
-    if (messagesString != null) {
-      setState(() {
-        _messages = messagesString.split(';');
-      });
-    }
-  }
-
-  Future<void> _saveMessages() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    String messagesString = _messages.join(';');
-    await prefs.setString(widget.chat.name, messagesString);
-  }
-
-  void _sendMessage(String text) {
-    setState(() {
-      _messages.add(text);
-      _textController.clear();
-      _saveMessages(); // Save the messages to shared preferences
-    });
-  }
-}
-
-class Chat {
-  final String name;
-
-  Chat({required this.name});
 }

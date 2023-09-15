@@ -3,6 +3,7 @@ import 'package:Pedagodino/screens/clientScreens/chat_selection.dart';
 import 'package:Pedagodino/screens/clientScreens/componentesClient/babas_details/bdetails_3.dart';
 import 'package:Pedagodino/screens/clientScreens/componentesClient/babas_details/bdetails_4.dart';
 import 'package:Pedagodino/screens/clientScreens/login.dart';
+import 'package:Pedagodino/screens/clientScreens/profile_screen.dart';
 import 'package:Pedagodino/screens/settings_screen.dart';
 import 'package:Pedagodino/screens/clientScreens/componentesClient/baba_cards/baba2.dart';
 import 'package:Pedagodino/screens/clientScreens/componentesClient/baba_cards/baba3.dart';
@@ -170,7 +171,7 @@ class NavigationDrawer extends StatelessWidget {
             title: Text('Profile'),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => ProfileApp(),
+                builder: (context) => ProfileScreen(),
               ));
             },
           ),

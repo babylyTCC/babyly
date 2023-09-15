@@ -7,9 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-void main() => runApp(ProfileApp());
-
-class ProfileApp extends StatelessWidget {
+class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -124,29 +122,36 @@ class _ProfileScreenBabysitterState extends State<ProfileScreenBabysitter> {
                             as ImageProvider,
                   ),
                 ),
-                SizedBox(height: 16.0),
-                TextField(
-                  controller: _nameController,
-                  decoration: InputDecoration(
-                    labelText: 'Name',
-                  ),
-                  onChanged: (value) {
-                    setState(() {
-                      _name = value;
-                    });
+                TextFormField(
+                  autofocus: false,
+                  keyboardType: TextInputType.name,
+                  validator: (value) {
+                    RegExp regex = RegExp(r'^.{1,}$');
+                    if (value!.isEmpty) {
+                      return ("Por favor informe o sobrenome");
+                    }
+                    if (!regex.hasMatch(value)) {
+                      return ("O sobrenome deve ter mais de 1 caracter");
+                    }
+                    return null;
                   },
-                ),
-                SizedBox(height: 16.0),
-                TextField(
-                  controller: _emailController,
+                  // onSaved: (value) {
+                  //   secondNameEditingController.text = value!;
+                  // },
+                  textInputAction: TextInputAction.next,
                   decoration: InputDecoration(
-                    labelText: 'Email',
+                    filled: true,
+                    fillColor: const Color.fromARGB(100, 235, 237, 239),
+                    // prefixIcon: const Icon(Icons.account_circle,
+                    //     color: Color.fromARGB(255, 138, 0, 236)),
+                    contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+                    hintText: "Sobrenome",
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5),
+                      borderSide:
+                          const BorderSide(color: Colors.white, width: 1.0),
+                    ),
                   ),
-                  onChanged: (value) {
-                    setState(() {
-                      _email = value;
-                    });
-                  },
                 ),
                 SizedBox(height: 16.0),
                 ElevatedButton(
