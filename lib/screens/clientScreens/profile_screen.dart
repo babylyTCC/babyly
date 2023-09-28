@@ -1,227 +1,146 @@
-import 'dart:convert';
-import 'dart:io';
-import 'dart:typed_data';
-import 'package:Pedagodino/screens/clientScreens/componentesClient/baba_cards/baba1.dart';
+import 'package:Pedagodino/screens/clientScreens/chat_selection.dart';
+import 'package:Pedagodino/screens/clientScreens/home_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-class ProfileApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-      ),
-      home: ProfileScreen(),
-    );
-  }
-}
+import '../../models/user_model.dart';
 
 class ProfileScreen extends StatefulWidget {
+  ProfileScreen({Key? key}) : super(key: key);
+
   @override
-  _ProfileScreenState createState() => _ProfileScreenState();
+  State<ProfileScreen> createState() => _StackContainerState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
-  late SharedPreferences _prefs;
-  String _name = '';
-  String _email = '';
-  Uint8List? _photo;
-
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-
-  List<Person> _persons = [];
-
-  Future<void> _loadProfile() async {
-    _prefs = await SharedPreferences.getInstance();
-    _name = _prefs.getString('name') ?? '';
-    _email = _prefs.getString('email') ?? '';
-    String? photoPath = _prefs.getString('photoPath');
-    if (photoPath != null) {
-      setState(() {
-        _photo = File(photoPath).readAsBytesSync();
-      });
-    }
-    _nameController.text = _name;
-    _emailController.text = _email;
-
-    String? personsJson = _prefs.getString('persons');
-    if (personsJson != null) {
-      List<dynamic> jsonList = jsonDecode(personsJson);
-      List<Person> loadedPersons =
-          jsonList.map((json) => Person.fromJson(json)).toList();
-      setState(() {
-        _persons = loadedPersons;
-      });
-    }
-  }
-
-  Future<void> _saveProfile() async {
-    _prefs.setString('name', _nameController.text);
-    _prefs.setString('email', _emailController.text);
-    if (_photo != null) {
-      Directory appDocDir = await getApplicationDocumentsDirectory();
-      String photoPath = '${appDocDir.path}/profile_photo.jpg';
-      await File(photoPath).writeAsBytes(_photo!);
-      _prefs.setString('photoPath', photoPath);
-    }
-
-    List<String> personsJson =
-        _persons.map((person) => jsonEncode(person.toJson())).toList();
-    await _prefs.setStringList('persons', personsJson);
-  }
-
-  // Future<void> _updatePhoto() async {
-  //   final picker = ImagePicker();
-  //   final pickedFile = await picker.getImage(source: ImageSource.gallery);
-  //   if (pickedFile != null) {
-  //     setState(() {
-  //       _photo = File(pickedFile.path).readAsBytesSync();
-  //     });
-  //   }
-  // }
+class _StackContainerState extends State<ProfileScreen> {
+  User? user = FirebaseAuth.instance.currentUser;
+  UserModel loggedInUser = UserModel();
 
   @override
   void initState() {
     super.initState();
-    _loadProfile();
-  }
-
-  @override
-  void dispose() {
-    _nameController.dispose();
-    _emailController.dispose();
-    super.dispose();
+    FirebaseFirestore.instance
+        .collection("users")
+        .doc(user!.uid)
+        .get()
+        .then((value) {
+      loggedInUser = UserModel.fromMap(value.data());
+      setState(() {});
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(''),
-        backgroundColor: Colors.purple,
-      ),
-      body: ListView(
-        children: <Widget>[
-          Container(
-            padding: EdgeInsets.all(16.0),
-            child: Column(
-              children: <Widget>[
-                GestureDetector(
-                  // onTap: _updatePhoto,
-                  child: CircleAvatar(
-                    radius: 64.0,
-                    backgroundImage: _photo != null
-                        ? MemoryImage(_photo!)
-                        : AssetImage('assets/default_profile.png')
-                            as ImageProvider,
-                  ),
-                ),
-                SizedBox(height: 16.0),
-                TextField(
-                  controller: _nameController,
-                  decoration: InputDecoration(
-                    labelText: 'Name',
-                  ),
-                  onChanged: (value) {
-                    setState(() {
-                      _name = value;
-                    });
-                  },
-                ),
-                SizedBox(height: 16.0),
-                TextField(
-                  controller: _emailController,
-                  decoration: InputDecoration(
-                    labelText: 'Email',
-                  ),
-                  onChanged: (value) {
-                    setState(() {
-                      _email = value;
-                    });
-                  },
-                ),
-                SizedBox(height: 16.0),
-                ElevatedButton(
-                  onPressed: () {
-                    _saveProfile();
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title: Text('Alterações Salvas!'),
-                          actions: <Widget>[
-                            TextButton(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                              child: Text('OK'),
-                            ),
-                          ],
-                        );
-                      },
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.lightGreen,
-                  ),
-                  child: Text('Salvar alterações'),
-                ),
-              ],
-            ),
+    return SafeArea(
+      child: Scaffold(
+        body: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15.0),
           ),
-          // baba1()
-        ],
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: MediaQuery.of(context).size.height * .3,
+                child: Stack(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 30.0),
+                      child: Container(
+                        height: MediaQuery.of(context).size.height,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.elliptical(
+                                MediaQuery.of(context).size.width * 0.5, 100.0),
+                            bottomRight: Radius.elliptical(
+                                MediaQuery.of(context).size.width * 0.5, 100.0),
+                          ),
+                          image: const DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage('assets/icons/background.jpg'),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.topCenter,
+                      child: Stack(
+                        children: [],
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          CircleAvatar(
+                            radius: 70,
+                            backgroundImage:
+                                AssetImage('assets/icons/default_profile.png'),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
+                  child: Text(
+                    "${loggedInUser.firstName} ${loggedInUser.secondName}",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+// ElevatedButton(onPressed: MaterialPageRoute(builder: context), child: Text("Salvar alterações"))
+              Padding(
+                  padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
+                  child: TextField(
+                    decoration: InputDecoration(
+                        hintText: "Conte um pouco sobre você!",
+                        border: OutlineInputBorder()),
+                  )),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [],
+              ),
+              Container(
+                alignment: Alignment.center,
+                child: Material(
+                  elevation: 5,
+                  borderRadius: BorderRadius.circular(5),
+                  color: Colors.purple,
+                  child: MaterialButton(
+                    padding: const EdgeInsets.all(10),
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) => BabysitterListScreen()));
+                    },
+                    child: const Text(
+                      "Voltar",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 10,
+              )
+            ],
+          ),
+        ),
       ),
     );
-  }
-
-  Widget _buildCards() {
-    return ListView.builder(
-      shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
-      itemCount: _persons.length,
-      itemBuilder: (context, index) {
-        return Card(
-          child: ListTile(
-            leading: _persons[index].photo != null
-                ? CircleAvatar(
-                    backgroundImage: MemoryImage(_persons[index].photo!),
-                  )
-                : CircleAvatar(child: Icon(Icons.person)),
-            title: Text(_persons[index].name),
-            subtitle: Text('Age: ${_persons[index].age}'),
-          ),
-        );
-      },
-    );
-  }
-}
-
-class Person {
-  final String name;
-  final String age;
-  Uint8List? photo;
-
-  Person({required this.name, required this.age, this.photo});
-
-  factory Person.fromJson(Map<String, dynamic> json) {
-    return Person(
-      name: json['name'],
-      age: json['age'],
-      photo: json['photo'] != null ? base64Decode(json['photo']) : null,
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'name': name,
-      'age': age,
-      'photo': photo != null ? base64Encode(photo!) : null,
-    };
   }
 }

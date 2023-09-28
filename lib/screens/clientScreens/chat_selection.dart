@@ -1,7 +1,12 @@
+import 'package:Pedagodino/screens/clientScreens/componentesClient/baba_chats/chatScreenClient.dart';
 import 'package:Pedagodino/screens/clientScreens/chat_detailsclient.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:Pedagodino/utilities/custom_heading.dart';
+
+import 'componentesClient/baba_chats/chatScreenClient2.dart';
+import 'componentesClient/baba_chats/chatScreenClient3.dart';
+import 'componentesClient/baba_chats/chatScreenClient4.dart';
 
 void main() => runApp(ChatApp());
 
@@ -70,10 +75,20 @@ class ChatSelectionScreen extends StatelessWidget {
                             ),
                             borderRadius: BorderRadius.circular(100),
                           ),
-                          child: CircleAvatar(
-                            radius: 70,
-                            backgroundImage:
-                                AssetImage('assets/icons/babysitter1.jpg'),
+                          child: InkWell(
+                            child: CircleAvatar(
+                              radius: 70,
+                              backgroundImage:
+                                  AssetImage('assets/icons/babysitter1.jpg'),
+                            ),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => BasicChat1(),
+                                ),
+                              );
+                            },
                           ),
                         ),
                         Padding(
@@ -98,7 +113,7 @@ class ChatSelectionScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ChatDetailsClient(),
+                          builder: (context) => BasicChat2(),
                         ),
                       );
                     },
@@ -149,7 +164,7 @@ class ChatSelectionScreen extends StatelessWidget {
                                   padding: EdgeInsets.only(top: 5),
                                 ),
                                 Text(
-                                  'teste chat',
+                                  'Offline',
                                   style: TextStyle(
                                     color: Color(0xff8C68EC),
                                     fontSize: 14,
@@ -198,7 +213,7 @@ class ChatSelectionScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ChatDetailsClient(),
+                          builder: (context) => BasicChat3(),
                         ),
                       );
                     },
@@ -249,7 +264,7 @@ class ChatSelectionScreen extends StatelessWidget {
                                   padding: EdgeInsets.only(top: 5),
                                 ),
                                 Text(
-                                  'teste chat',
+                                  'Offline',
                                   style: TextStyle(
                                     color: Color(0xff8C68EC),
                                     fontSize: 14,
@@ -298,7 +313,7 @@ class ChatSelectionScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ChatDetailsClient(),
+                          builder: (context) => BasicChat4(),
                         ),
                       );
                     },
@@ -349,7 +364,7 @@ class ChatSelectionScreen extends StatelessWidget {
                                   padding: EdgeInsets.only(top: 5),
                                 ),
                                 Text(
-                                  'teste chat',
+                                  'Offline',
                                   style: TextStyle(
                                     color: Color(0xff8C68EC),
                                     fontSize: 14,
