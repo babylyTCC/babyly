@@ -47,7 +47,9 @@ class _StackContainerState extends State<ProfileScreen> {
                 child: Stack(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 30.0),
+                      padding: const EdgeInsets.only(
+                        bottom: 30.0,
+                      ),
                       child: Container(
                         height: MediaQuery.of(context).size.height,
                         decoration: BoxDecoration(
@@ -99,44 +101,45 @@ class _StackContainerState extends State<ProfileScreen> {
                   ),
                 ),
               ),
-// ElevatedButton(onPressed: MaterialPageRoute(builder: context), child: Text("Salvar alterações"))
               Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
+                  padding: const EdgeInsets.only(left: 10, right: 10, top: 5),
                   child: TextField(
                     decoration: InputDecoration(
                         hintText: "Conte um pouco sobre você!",
                         border: OutlineInputBorder()),
                   )),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [],
-              ),
               Container(
                 alignment: Alignment.center,
                 child: Material(
                   elevation: 5,
                   borderRadius: BorderRadius.circular(5),
-                  color: Colors.purple,
+                  color: Colors.green,
                   child: MaterialButton(
                     padding: const EdgeInsets.all(10),
                     onPressed: () {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (context) => BabysitterListScreen()));
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return const AlertDialog(
+                              content: Text("Alterações salvas!"),
+                            );
+                          });
                     },
                     child: const Text(
-                      "Voltar",
+                      "Salvar Alterações",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 15,
                           color: Colors.white,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
               ),
-              SizedBox(
-                width: 10,
-              )
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [],
+              ),
             ],
           ),
         ),

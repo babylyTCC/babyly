@@ -21,9 +21,9 @@ class _BasicChat3State extends State<BasicChat3> {
 
   List<ChatMessage> messages = <ChatMessage>[
     ChatMessage(
-      text: 'text',
+      text: 'Não conseguirei te atender neste horário :(',
       user: ChatUser(id: '2'),
-      createdAt: DateTime.now(),
+      createdAt: DateTime.parse("2023-09-03 21:30:00"),
     ),
   ];
 

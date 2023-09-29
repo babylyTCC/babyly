@@ -21,7 +21,7 @@ class _BasicChat1State extends State<BasicChat1> {
 
   List<ChatMessage> messages = <ChatMessage>[
     ChatMessage(
-      text: 'text',
+      text: 'Bom dia! Vi que precisa de uma babá, posso ajudar?',
       user: ChatUser(id: '2'),
       createdAt: DateTime.now(),
     ),

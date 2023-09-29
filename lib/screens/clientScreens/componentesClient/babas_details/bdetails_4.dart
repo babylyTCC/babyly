@@ -1,4 +1,5 @@
 import 'package:Pedagodino/screens/clientScreens/chat_selection.dart';
+import 'package:Pedagodino/screens/clientScreens/componentesClient/baba_chats/chatScreenClient4.dart';
 import 'package:Pedagodino/screens/clientScreens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -93,7 +94,7 @@ class bdetails4 extends StatelessWidget {
                             ),
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => ChatSelectionScreen(),
+                                builder: (context) => BasicChat4(),
                               ));
                             },
                           ),
