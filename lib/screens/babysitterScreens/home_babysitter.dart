@@ -9,6 +9,7 @@ import 'package:Pedagodino/screens/settings_screen.dart';
 
 import 'package:flutter/material.dart';
 
+import '../clientScreens/profile_screen.dart';
 import 'componentesbaba/parentscards/parents1.dart';
 import 'componentesbaba/parentscards/parents2.dart';
 import 'componentesbaba/parentscards/parents3.dart';
@@ -162,7 +163,7 @@ class NavigationDrawer extends StatelessWidget {
             title: Text('Chats'),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => ChatSelectionBBScreen(),
+                builder: (context) => ChatSelectionBabyScreen(),
               ));
             },
           ),
@@ -171,7 +172,7 @@ class NavigationDrawer extends StatelessWidget {
             title: Text('Profile'),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => ProfileScreenBabysitter(),
+                builder: (context) => ProfileScreen(),
               ));
             },
           ),

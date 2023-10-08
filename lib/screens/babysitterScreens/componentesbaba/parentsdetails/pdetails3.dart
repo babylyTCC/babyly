@@ -4,6 +4,8 @@ import 'package:Pedagodino/screens/clientScreens/chat_selection.dart';
 import 'package:Pedagodino/screens/clientScreens/home_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../parentsChats/parentChat3.dart';
+
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
@@ -95,7 +97,7 @@ class pdetails3 extends StatelessWidget {
                             ),
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => ChatSelectionBBScreen(),
+                                builder: (context) => PChat3(),
                               ));
                             },
                           ),
