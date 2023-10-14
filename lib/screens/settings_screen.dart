@@ -53,7 +53,7 @@ class _SecurityState extends State<Security> {
       appBar: AppBar(
         backgroundColor: Colors.purple,
         iconTheme: const IconThemeData(
-          color: Colors.black87, //change your color here
+          color: Colors.white, //change your color here
         ),
         title: const Text(
           "",

@@ -38,6 +38,7 @@ class _RegistrationScreenBabysitterState
 
   @override
   Widget build(BuildContext context) {
+    SizedBox(height: 80);
     final firtNameField = TextFormField(
       autofocus: false,
       controller: firstNameEditingController,
@@ -64,7 +65,7 @@ class _RegistrationScreenBabysitterState
         contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         hintText: "Nome",
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(25),
           borderSide: const BorderSide(color: Colors.white, width: 1.0),
         ),
       ),
@@ -96,7 +97,7 @@ class _RegistrationScreenBabysitterState
         contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         hintText: "Sobrenome",
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(25),
           borderSide: const BorderSide(color: Colors.white, width: 1.0),
         ),
       ),
@@ -128,39 +129,7 @@ class _RegistrationScreenBabysitterState
         contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         hintText: "Email",
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5),
-          borderSide: const BorderSide(color: Colors.white, width: 1.0),
-        ),
-      ),
-    );
-
-    final bioField = TextFormField(
-      autofocus: false,
-      controller: emailEditingController,
-      keyboardType: TextInputType.emailAddress,
-      validator: (value) {
-        if (value!.isEmpty) {
-          return ("Por favor insira seu email");
-        }
-        //reg expression for email validation
-        if (!RegExp("^[a-zA-z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)) {
-          return ("Insira um email válido");
-        }
-        return null;
-      },
-      onSaved: (value) {
-        bioEditingController.text = value!;
-      },
-      textInputAction: TextInputAction.next,
-      decoration: InputDecoration(
-        filled: true,
-        fillColor: const Color.fromARGB(100, 235, 237, 239),
-        // prefixIcon:
-        //     const Icon(Icons.mail, color: Color.fromARGB(255, 138, 0, 236)),
-        contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-        hintText: "Escreva um pouco sobre você!",
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(25),
           borderSide: const BorderSide(color: Colors.white, width: 1.0),
         ),
       ),
@@ -190,9 +159,9 @@ class _RegistrationScreenBabysitterState
         // prefixIcon:
         //     const Icon(Icons.vpn_key, color: Color.fromARGB(255, 138, 0, 236)),
         // contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-        hintText: "Senha",
+        hintText: "  Senha",
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(25),
           borderSide: const BorderSide(color: Colors.white, width: 1.0),
         ),
       ),
@@ -221,7 +190,7 @@ class _RegistrationScreenBabysitterState
         contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         hintText: "Confirme a senha",
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(25),
           borderSide: const BorderSide(color: Colors.white, width: 1.0),
         ),
       ),
@@ -229,7 +198,7 @@ class _RegistrationScreenBabysitterState
 
     final signUpButton = Material(
       elevation: 5,
-      borderRadius: BorderRadius.circular(5),
+      borderRadius: BorderRadius.circular(25),
       color: const Color.fromARGB(255, 138, 0, 236),
       child: MaterialButton(
         padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
@@ -293,10 +262,6 @@ class _RegistrationScreenBabysitterState
                             Container(
                               width: 260,
                               child: emailField,
-                            ),
-                            Container(
-                              width: 260,
-                              child: bioField,
                             ),
                             const SizedBox(height: 25),
                             Container(

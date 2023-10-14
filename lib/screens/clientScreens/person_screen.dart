@@ -109,7 +109,7 @@ class _PersonScreenState extends State<PersonScreen> {
                     )
                   : CircleAvatar(child: Icon(Icons.person)),
               title: Text(_persons[index].name),
-              subtitle: Text('Age: ${_persons[index].age}'),
+              subtitle: Text('Idade: ${_persons[index].age}'),
               trailing: IconButton(
                 icon: Icon(Icons.delete),
                 onPressed: () => _deletePerson(index),

@@ -121,7 +121,7 @@ class bdetails3 extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
                 child: Text(
-                  'Me chamo Denise e sou pedagoga há 15 anos. Atuo em período integral e em todas as faixas etáreas',
+                  'Me chamo Denise e sou pedagoga há 15 anos. Atuo em período integral e em todas as faixas etárias',
                   style: TextStyle(fontSize: 15),
                 ),
               ),

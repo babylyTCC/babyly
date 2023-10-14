@@ -61,7 +61,7 @@ class _RegistrationScreenClientState extends State<RegistrationScreenClient> {
         contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         hintText: "Nome",
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(25),
           borderSide: const BorderSide(color: Colors.white, width: 1.0),
         ),
       ),
@@ -93,7 +93,7 @@ class _RegistrationScreenClientState extends State<RegistrationScreenClient> {
         contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         hintText: "Sobrenome",
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(25),
           borderSide: const BorderSide(color: Colors.white, width: 1.0),
         ),
       ),
@@ -125,7 +125,7 @@ class _RegistrationScreenClientState extends State<RegistrationScreenClient> {
         contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         hintText: "Email",
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(25),
           borderSide: const BorderSide(color: Colors.white, width: 1.0),
         ),
       ),
@@ -157,7 +157,7 @@ class _RegistrationScreenClientState extends State<RegistrationScreenClient> {
         contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         hintText: "Senha",
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(25),
           borderSide: const BorderSide(color: Colors.white, width: 1.0),
         ),
       ),
@@ -194,7 +194,7 @@ class _RegistrationScreenClientState extends State<RegistrationScreenClient> {
 
     final signUpButton = Material(
       elevation: 5,
-      borderRadius: BorderRadius.circular(5),
+      borderRadius: BorderRadius.circular(25),
       color: const Color.fromARGB(255, 138, 0, 236),
       child: MaterialButton(
         padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
