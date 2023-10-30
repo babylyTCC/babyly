@@ -88,7 +88,7 @@ class _SecurityState extends State<Security> {
                     builder: (context) {
                       return const AlertDialog(
                         content: Text(
-                            "Desenvolvido por: Vinícius Souza e Rian Beluzzo. 2023     Imagens utilizadas sem fins lucrativos."),
+                            "Desenvolvido por: Vinícius Sousa e Rian Beluzzo. 2023     Imagens utilizadas sem fins lucrativos."),
                       );
                     });
               },

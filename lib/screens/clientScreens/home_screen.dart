@@ -177,7 +177,7 @@ class NavigationDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.person),
-            title: Text('Profile'),
+            title: Text('Perfil'),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => ProfileScreen(),
@@ -186,7 +186,7 @@ class NavigationDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.settings),
-            title: Text('Settings'),
+            title: Text('Configurações'),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => Security(),
@@ -195,7 +195,7 @@ class NavigationDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.logout),
-            title: Text('Logout'),
+            title: Text('Sair'),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => LoginScreen(),
