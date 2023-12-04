@@ -1,8 +1,8 @@
-import 'package:Pedagodino/screens/clientScreens/componentesClient/baba_chats/chatScreenClient.dart';
-import 'package:Pedagodino/screens/clientScreens/chat_detailsclient.dart';
+import 'package:babyly/screens/clientScreens/componentesClient/baba_chats/chatScreenClient.dart';
+import 'package:babyly/screens/clientScreens/chat_detailsclient.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:Pedagodino/utilities/custom_heading.dart';
+import 'package:babyly/utilities/custom_heading.dart';
 
 import 'componentesbaba/parentsChats/parentChat1.dart';
 import 'componentesbaba/parentsChats/parentChat2.dart';

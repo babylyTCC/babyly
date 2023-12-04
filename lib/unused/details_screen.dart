@@ -1,7 +1,7 @@
-import 'package:Pedagodino/constants/color.dart';
-//import 'package:Pedagodino/constants/icons.dart';
-//import 'package:Pedagodino/models/lesson.dart';
-//import 'package:Pedagodino/widgets/custom_video_player.dart';
+import 'package:babyly/constants/color.dart';
+//import 'package:babyly/constants/icons.dart';
+//import 'package:babyly/models/lesson.dart';
+//import 'package:babyly/widgets/custom_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 //import '../widgets/lesson_card.dart';

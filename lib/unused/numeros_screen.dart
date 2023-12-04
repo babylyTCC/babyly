@@ -1,9 +1,9 @@
-// import 'package:Pedagodino/screens/moduloNumeros/atividade4.dart';
+// import 'package:babyly/screens/moduloNumeros/atividade4.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter/services.dart';
-// import 'package:Pedagodino/models/course.dart';
-// import 'package:Pedagodino/constants/color.dart';
-// //import 'package:Pedagodino/constants/icons.dart';
+// import 'package:babyly/models/course.dart';
+// import 'package:babyly/constants/color.dart';
+// //import 'package:babyly/constants/icons.dart';
 // import 'details_screen.dart';
 
 // class numerosScreen extends StatefulWidget {

@@ -1,4 +1,4 @@
-import 'package:Pedagodino/constants/icons.dart';
+import 'package:babyly/constants/icons.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 

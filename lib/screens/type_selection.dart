@@ -1,6 +1,6 @@
-import 'package:Pedagodino/screens/babysitterScreens/login_babysitter.dart';
-import 'package:Pedagodino/screens/babysitterScreens/registration_babysitter.dart';
-import 'package:Pedagodino/screens/clientScreens/registration_client.dart';
+import 'package:babyly/screens/babysitterScreens/login_babysitter.dart';
+import 'package:babyly/screens/babysitterScreens/registration_babysitter.dart';
+import 'package:babyly/screens/clientScreens/registration_client.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'clientScreens/login.dart';

@@ -1,4 +1,4 @@
-import 'package:Pedagodino/models/globals.dart';
+import 'package:babyly/models/globals.dart';
 import 'package:flutter/material.dart';
 
 class type1button extends StatelessWidget {

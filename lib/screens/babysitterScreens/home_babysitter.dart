@@ -1,11 +1,11 @@
-import 'package:Pedagodino/screens/babysitterScreens/chat_selection_babysitter.dart';
-import 'package:Pedagodino/screens/babysitterScreens/componentesbaba/parentsdetails/pdetails1.dart';
-import 'package:Pedagodino/screens/babysitterScreens/componentesbaba/parentsdetails/pdetails2.dart';
-import 'package:Pedagodino/screens/babysitterScreens/componentesbaba/parentsdetails/pdetails3.dart';
-import 'package:Pedagodino/screens/babysitterScreens/componentesbaba/parentsdetails/pdetails4.dart';
-import 'package:Pedagodino/screens/babysitterScreens/login_babysitter.dart';
-import 'package:Pedagodino/screens/babysitterScreens/profile_babysitter.dart';
-import 'package:Pedagodino/screens/settings_screen.dart';
+import 'package:babyly/screens/babysitterScreens/chat_selection_babysitter.dart';
+import 'package:babyly/screens/babysitterScreens/componentesbaba/parentsdetails/pdetails1.dart';
+import 'package:babyly/screens/babysitterScreens/componentesbaba/parentsdetails/pdetails2.dart';
+import 'package:babyly/screens/babysitterScreens/componentesbaba/parentsdetails/pdetails3.dart';
+import 'package:babyly/screens/babysitterScreens/componentesbaba/parentsdetails/pdetails4.dart';
+import 'package:babyly/screens/babysitterScreens/login_babysitter.dart';
+import 'package:babyly/screens/babysitterScreens/profile_babysitter.dart';
+import 'package:babyly/screens/settings_screen.dart';
 
 import 'package:flutter/material.dart';
 

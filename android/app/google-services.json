@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:517762064365:android:d096c7cf5aa80fe94851e4",
         "android_client_info": {
-          "package_name": "com.example.Pedagodino"
+          "package_name": "com.example.babyly"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "517762064365-q2875dfh1pj2eph7mep12c73qgk6uh5s.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.Pedagodino",
+            "package_name": "com.example.babyly",
             "certificate_hash": "3735ee6813cd3bea527d20a736418d1acf49c4ec"
           }
         },

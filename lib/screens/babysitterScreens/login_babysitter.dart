@@ -1,8 +1,8 @@
-import 'package:Pedagodino/screens/clientScreens/home_screen.dart';
-import 'package:Pedagodino/screens/type_selection.dart';
+import 'package:babyly/screens/clientScreens/home_screen.dart';
+import 'package:babyly/screens/type_selection.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:Pedagodino/unused/base_screen.dart';
+import 'package:babyly/unused/base_screen.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'home_babysitter.dart';
 import 'registration_babysitter.dart';

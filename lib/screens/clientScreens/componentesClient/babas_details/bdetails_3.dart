@@ -1,5 +1,5 @@
-import 'package:Pedagodino/screens/clientScreens/chat_selection.dart';
-import 'package:Pedagodino/screens/clientScreens/home_screen.dart';
+import 'package:babyly/screens/clientScreens/chat_selection.dart';
+import 'package:babyly/screens/clientScreens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../baba_chats/chatScreenClient3.dart';

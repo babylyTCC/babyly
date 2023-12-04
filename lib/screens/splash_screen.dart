@@ -1,6 +1,6 @@
 // import 'dart:async';
 // import 'package:flutter/material.dart';
-// import 'package:Pedagodino/screens/onboarding_screen.dart';
+// import 'package:babyly/screens/onboarding_screen.dart';
 
 // class SplashScreen extends StatefulWidget {
 //   const SplashScreen({super.key});

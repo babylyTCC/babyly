@@ -1,7 +1,7 @@
-// import 'package:Pedagodino/constants/color.dart';
-// import 'package:Pedagodino/screens/home_screen.dart';
-// import 'package:Pedagodino/screens/settings_screen.dart';
-// import 'package:Pedagodino/screens/profile_screen.dart';
+// import 'package:babyly/constants/color.dart';
+// import 'package:babyly/screens/home_screen.dart';
+// import 'package:babyly/screens/settings_screen.dart';
+// import 'package:babyly/screens/profile_screen.dart';
 // import 'package:flutter/material.dart';
 
 // import '../models/globals.dart';

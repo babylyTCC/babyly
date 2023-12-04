@@ -1,7 +1,7 @@
-import 'package:Pedagodino/screens/babysitterScreens/chat_selection_babysitter.dart';
-import 'package:Pedagodino/screens/babysitterScreens/home_babysitter.dart';
-import 'package:Pedagodino/screens/clientScreens/chat_selection.dart';
-import 'package:Pedagodino/screens/clientScreens/home_screen.dart';
+import 'package:babyly/screens/babysitterScreens/chat_selection_babysitter.dart';
+import 'package:babyly/screens/babysitterScreens/home_babysitter.dart';
+import 'package:babyly/screens/clientScreens/chat_selection.dart';
+import 'package:babyly/screens/clientScreens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../parentsChats/parentChat3.dart';

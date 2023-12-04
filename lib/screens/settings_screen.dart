@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:Pedagodino/widgets/menuitem.dart';
+import 'package:babyly/widgets/menuitem.dart';
 
 class Security extends StatefulWidget {
   const Security({super.key});

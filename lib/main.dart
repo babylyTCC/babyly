@@ -1,6 +1,6 @@
-import 'package:Pedagodino/screens/clientScreens/login.dart';
-import 'package:Pedagodino/screens/onboarding_screen.dart';
-import 'package:Pedagodino/screens/type_selection.dart';
+import 'package:babyly/screens/clientScreens/login.dart';
+import 'package:babyly/screens/onboarding_screen.dart';
+import 'package:babyly/screens/type_selection.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

@@ -1,4 +1,4 @@
-import 'package:Pedagodino/constants/color.dart';
+import 'package:babyly/constants/color.dart';
 import 'package:flutter/material.dart';
 
 class CircleButton extends StatelessWidget {

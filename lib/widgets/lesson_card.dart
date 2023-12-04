@@ -1,5 +1,5 @@
-// import 'package:Pedagodino/constants/icons.dart';
-// import 'package:Pedagodino/models/lesson.dart';
+// import 'package:babyly/constants/icons.dart';
+// import 'package:babyly/models/lesson.dart';
 // import 'package:flutter/material.dart';
 
 // class LessonCard extends StatelessWidget {

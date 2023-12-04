@@ -1,15 +1,15 @@
-import 'package:Pedagodino/screens/clientScreens/chat_selection.dart';
-import 'package:Pedagodino/screens/clientScreens/componentesClient/babas_details/bdetails_3.dart';
-import 'package:Pedagodino/screens/clientScreens/componentesClient/babas_details/bdetails_4.dart';
-import 'package:Pedagodino/screens/clientScreens/login.dart';
-import 'package:Pedagodino/screens/clientScreens/person_screen.dart';
-import 'package:Pedagodino/screens/clientScreens/profile_screen.dart';
-import 'package:Pedagodino/screens/settings_screen.dart';
-import 'package:Pedagodino/screens/clientScreens/componentesClient/baba_cards/baba2.dart';
-import 'package:Pedagodino/screens/clientScreens/componentesClient/baba_cards/baba3.dart';
-import 'package:Pedagodino/screens/clientScreens/componentesClient/baba_cards/baba4.dart';
+import 'package:babyly/screens/clientScreens/chat_selection.dart';
+import 'package:babyly/screens/clientScreens/componentesClient/babas_details/bdetails_3.dart';
+import 'package:babyly/screens/clientScreens/componentesClient/babas_details/bdetails_4.dart';
+import 'package:babyly/screens/clientScreens/login.dart';
+import 'package:babyly/screens/clientScreens/person_screen.dart';
+import 'package:babyly/screens/clientScreens/profile_screen.dart';
+import 'package:babyly/screens/settings_screen.dart';
+import 'package:babyly/screens/clientScreens/componentesClient/baba_cards/baba2.dart';
+import 'package:babyly/screens/clientScreens/componentesClient/baba_cards/baba3.dart';
+import 'package:babyly/screens/clientScreens/componentesClient/baba_cards/baba4.dart';
 import 'package:flutter/material.dart';
-import 'package:Pedagodino/screens/clientScreens/componentesClient/baba_cards/baba1.dart';
+import 'package:babyly/screens/clientScreens/componentesClient/baba_cards/baba1.dart';
 
 import 'componentesClient/babas_details/bdetails_1.dart';
 import 'componentesClient/babas_details/bdetails_2.dart';

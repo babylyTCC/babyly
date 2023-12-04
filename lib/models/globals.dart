@@ -1,4 +1,4 @@
-library Pedagodino.globals;
+library babyly.globals;
 
 import 'package:shared_preferences/shared_preferences.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mdi/mdi.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:Pedagodino/models/quizz.dart';
+import 'package:babyly/models/quizz.dart';
 import '../constants/consts.dart';
 
 class QuizzPage extends StatefulWidget {

@@ -1,6 +1,6 @@
-import 'package:Pedagodino/screens/clientScreens/chat_selection.dart';
-import 'package:Pedagodino/screens/clientScreens/componentesClient/baba_chats/chatScreenClient4.dart';
-import 'package:Pedagodino/screens/clientScreens/home_screen.dart';
+import 'package:babyly/screens/clientScreens/chat_selection.dart';
+import 'package:babyly/screens/clientScreens/componentesClient/baba_chats/chatScreenClient4.dart';
+import 'package:babyly/screens/clientScreens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.Pedagodino">
+    package="com.example.babyly">
    <application
         android:label="baby.ly"
         android:name="${applicationName}"
